@@ -4,8 +4,8 @@ In this module, you mutate by DELETING elements of a list.
 
 Authors: David Mutchler, Amanda Stouder, Chandan Rupakheti, Katie Dion,
          Claude Anderson, Delvin Defoe, Curt Clifton, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Jiatong Zhang.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import m6_mutation
 
@@ -65,13 +65,18 @@ def RETURN_delete_negatives(numbers):
       :type numbers: list
     where the list is a list of numbers.
     """
-    # TODO: 2. First, READ THE ABOVE TEST CODE.
+    # DONE: 2. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
     #          In particular, note how it calls the   run_test   function
     #          from the module   m6_mutation   by using the notation:
     #             m6_mutation.run_test(...)
     #          Then, IMPLEMENT and test THIS FUNCTION
     #          (using the above code for testing).
+    n = []
+    for k in range(len(numbers)):
+        if numbers[k] >= 0:
+            n += [numbers[k]]
+    return n
 
 
 def run_test_MUTATE_delete_negatives():
@@ -124,7 +129,7 @@ def MUTATE_delete_negatives(numbers):
 
     Precondition: The argument is a list of numbers.
     """
-    # TODO: 3. First, READ THE ABOVE TEST CODE.
+    # DONE: 3. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
     #          In particular, note how it calls the   run_test   function
     #          from the module   m6_mutation   by using the notation:
@@ -137,6 +142,9 @@ def MUTATE_delete_negatives(numbers):
     #       Take a stab at this problem,
     #       then see the solutions posted on Piazza.
     #       See those solutions even if your approach passes the tests.
+    for k in range(len(numbers) - 1, -1, -1):
+        if numbers[k] < 0:
+            numbers.pop(k)
 
 
 # ----------------------------------------------------------------------
